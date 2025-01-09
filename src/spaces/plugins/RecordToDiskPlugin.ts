@@ -131,6 +131,6 @@ export class RecordToDiskPlugin implements Plugin {
     buf.writeUInt32LE(dataSize, 0);
     fs.writeSync(this.fileDescriptor, buf, 0, 4, 40);
 
-    console.log(`[RecordToDiskPlugin] WAV header updated: fileSize=${fileSizeMinus8+8}, dataSize=${dataSize}`);
+    console.log(`[RecordToDiskPlugin] WAV header updated: fileSize=${fileSizeMinus8+8}, dataSize=${dataSize},wavBitsPerSample=${this.wavBitsPerSample},wavSampleRate=${this.wavSampleRate},wavNumChannels=${this.wavNumChannels}`);
   }
 }
